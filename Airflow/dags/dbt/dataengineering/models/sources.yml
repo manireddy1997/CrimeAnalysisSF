@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bigquery
+    database: hakoona-matata-298704  # project_name
+    schema: SFCrimeData              # dataset_name
+    tables:                          # List of tables in raw layer
+      - name: tbl_raw_crime

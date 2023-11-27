@@ -1,0 +1,14 @@
+warehouse_profiles:
+  target: bq
+  outputs:
+    bq:
+      type: bigquery
+      method: service-account
+      # method: oauth
+      project: hakoona-matata-298704
+      dataset: SFCrimeData
+      threads: 4
+      location: US
+      priority: interactive
+      timeout_seconds: 300
+      keyfile: ./keys/hakoona-matata-sfcrimes.json

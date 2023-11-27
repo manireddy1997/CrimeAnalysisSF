@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hakoona-matata-298704",
+  "private_key_id": "cb4fce4009a711e760cc577271a64cad4c1ef62b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBLJ/Rzi2siwn4\nffr0GlRjJmVRi4dLLpmkfp24KsP8JPHVFuyzIWUJG8t+VW0drybOmFH+dUlSOhNO\nTzmSvVq+CvkCfzrD34yxyS5lUGUdwbY1raxAbXEj3EF8yG/skWIk9YS++Nd5zucy\nDtSNEKsXBS55+koVEY34aCgLNQpBb/0kVyhifcBhMz3D+VxjUqOcMyG8VOFIdouc\nD72dMdSk2ToToPdONuoh8NmSE4fVqlDgKsEW7yNj4ntrtqbaitG20vvbdQz5bELG\nNE55jJFbEFT13cunZvCOmxM4lDarOwTDt7u7IzTmq46h2KUgEr9tdFeLNqkaHYaD\nnMXif8ZzAgMBAAECggEACySsWXl3yAbDPfricZddO9T4rkIKvWsEQOlu5rNM1+w3\nqQ+n+tNX1TUtwW1jHH3AktVVkYSphJ1GBNPsIctbgy/12k+Fj8wC/TR6QSzokFVe\n0ezhTVwi1Ss8+dpEHpTqYPBqxmtrXqLxUkFpwHNwMyVA35dxE5MOKgC0IqVeIJUg\nEIkRnXNl+cdNcP4/AWPH7MgjoMQJLM5lUZzLfiXP0y88WGPo+8aN6P7ozrfRBw5W\n2rQUSd/W2BhmU/apalmCcWlp98YArpLK1hP81APuJJv+YFNyonXkmYrKr786lzSs\noVpjrD9LA1k3lkfQ3VuJ3q0/1QbquLsopsJMfu7xXQKBgQDfu31pJJgMXZ50FPbB\nTu+qGa5rTV6UOfOX5yC8Pd2zJOlYFNtOeEMOrJ5QzD+F/PNmq8KX9DNyR984ymSI\nIM4LPGOQEYuOaiEb44mWPnFs0RzQL9KN5GQ4xXfLmZ2uX/tWBL1hgdpktZgDvJKM\n6gI2J34TetRZ2jzgISRC4iG55wKBgQDdCONaPf95XCsrg1rFoUALuJ58EZrJdiVc\nMR3s5GdUhiECOC2LVTjY4bbEY1Oz6gZis8j2DBLT0XmQrpgC02gk+yxBSMejsl9F\nBxwmcDYvPDzsdXlQ7nt8Mzjdm+vpeH+4FsUxlcC4cpwYl1+LwbOMAE7fHV5dfmMu\nKR5mANh1lQKBgAd3T0ER+oz3FtGS3YUn6DGJ99sW0uApauqXyOzfN6XBxpOs5oCg\n3MQBmKrjlf8XqNu1QaImgQ0APv+7KU2topKXak8ldr3C5uXyWuYLoWdbNxXvcpxP\nkdSfKlc+AhgOlemR8OvvFGWl9bOyOEXBjV9XRArMX4e8E6n7ESW2PB/jAoGBAMKZ\nh6i0us67IdrOa8VhYUSwhv/OdAt4tA3FxIYC1SJqcHdGxHpOTp1Lo6ClnlTg7jxJ\n8t0E5jKM001ZGcYrIB6m8GCN1g4+BXh9eQAyfNH7Y9v+1Q8214sSgbdCBmJnz3Jg\nwb4VDTaW2O0hoGIn6I6S2t2+Oo1vr5w9YWEGz4w9AoGATtvrKYt5SLVeIY8TEPP7\ntN0CZrw4r8/ZEvd/d0Iwqz+JhOyaz507qVAef4k4g4OtcHNFecAiLUjvj+jqE6gL\nyw+mlw8sp4n7r3YYtA8sNp7pqp7oe7Sn6dp4OEUqx/1xuSVHTVVPVY2BmIwd+9eX\nbdHM6YM1+nyvPVdgLHHwdtM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sa-bq-sfcrimes@hakoona-matata-298704.iam.gserviceaccount.com",
+  "client_id": "102383255998676844653",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sa-bq-sfcrimes%40hakoona-matata-298704.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
