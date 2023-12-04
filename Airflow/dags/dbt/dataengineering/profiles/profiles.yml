@@ -11,4 +11,4 @@ warehouse_profiles:
       location: US
       priority: interactive
       timeout_seconds: 300
-      keyfile: ./keys/hakoona-matata-sfcrimes.json
+      keyfile: /mnt/ssd/external/projects/SA/bq.json

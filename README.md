@@ -12,3 +12,9 @@ The following will be fact and dimension tables based on Raw data.
 
 
 <img src="./img/dbdiagram.png" >
+
+
+## Architecture Design
+
+I am using ETL pipelines with Airflow, DBT and python to store data into data warehouse (Bigquery)
+

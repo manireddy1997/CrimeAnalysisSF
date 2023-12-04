@@ -1,0 +1,14 @@
+[2023-11-26T01:16:32.947+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_SFCrimes_data_download.download_data_task scheduled__2023-11-25T05:00:00+00:00 [queued]>
+[2023-11-26T01:16:32.976+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_SFCrimes_data_download.download_data_task scheduled__2023-11-25T05:00:00+00:00 [queued]>
+[2023-11-26T01:16:32.977+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2023-11-26T01:16:33.045+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): download_data_task> on 2023-11-25 05:00:00+00:00
+[2023-11-26T01:16:33.055+0000] {standard_task_runner.py:57} INFO - Started process 118662 to run task
+[2023-11-26T01:16:33.060+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'dag_SFCrimes_data_download', 'download_data_task', 'scheduled__2023-11-25T05:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/dag_sf_crimes_raw.py', '--cfg-path', '/tmp/tmpauqume2c']
+[2023-11-26T01:16:33.064+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask download_data_task
+[2023-11-26T01:16:33.216+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_SFCrimes_data_download.download_data_task scheduled__2023-11-25T05:00:00+00:00 [running]> on host jarvis
+[2023-11-26T01:16:33.725+0000] {taskinstance.py:1568} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_SFCrimes_data_download' AIRFLOW_CTX_TASK_ID='download_data_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-25T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-25T05:00:00+00:00'
+[2023-11-26T01:16:34.503+0000] {socrata.py:63} WARNING - Requests made without an app_token will be subject to strict throttling limits.
+[2023-11-26T01:16:35.600+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-11-26T01:16:35.635+0000] {taskinstance.py:1368} INFO - Marking task as SUCCESS. dag_id=dag_SFCrimes_data_download, task_id=download_data_task, execution_date=20231125T050000, start_date=20231126T011632, end_date=20231126T011635
+[2023-11-26T01:16:35.730+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2023-11-26T01:16:35.806+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

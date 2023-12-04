@@ -1,0 +1,55 @@
+[2023-11-26T01:32:23.431+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_SFCrimes_DimFact.tbl_curated_crime manual__2023-11-26T01:24:45.572558+00:00 [queued]>
+[2023-11-26T01:32:23.461+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_SFCrimes_DimFact.tbl_curated_crime manual__2023-11-26T01:24:45.572558+00:00 [queued]>
+[2023-11-26T01:32:23.462+0000] {taskinstance.py:1331} INFO - Starting attempt 2 of 2
+[2023-11-26T01:32:23.497+0000] {taskinstance.py:1350} INFO - Executing <Task(BashOperator): tbl_curated_crime> on 2023-11-26 01:24:45.572558+00:00
+[2023-11-26T01:32:23.507+0000] {standard_task_runner.py:57} INFO - Started process 120002 to run task
+[2023-11-26T01:32:23.513+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'dag_SFCrimes_DimFact', 'tbl_curated_crime', 'manual__2023-11-26T01:24:45.572558+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/dag_sf_crimes_DimFact.py', '--cfg-path', '/tmp/tmp_mo1sszh']
+[2023-11-26T01:32:23.517+0000] {standard_task_runner.py:85} INFO - Job 34: Subtask tbl_curated_crime
+[2023-11-26T01:32:23.667+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_SFCrimes_DimFact.tbl_curated_crime manual__2023-11-26T01:24:45.572558+00:00 [running]> on host jarvis
+[2023-11-26T01:32:24.149+0000] {taskinstance.py:1568} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_SFCrimes_DimFact' AIRFLOW_CTX_TASK_ID='tbl_curated_crime' AIRFLOW_CTX_EXECUTION_DATE='2023-11-26T01:24:45.572558+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-26T01:24:45.572558+00:00'
+[2023-11-26T01:32:24.151+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-11-26T01:32:24.153+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/mani-dev/.local/bin/dbt run --select "tag:tbl_curated_crime" --profiles-dir /home/mani-dev/airflow/dags/dbt/dataengineering/profiles --project-dir /home/mani-dev/airflow/dags/dbt/dataengineering']
+[2023-11-26T01:32:24.172+0000] {subprocess.py:86} INFO - Output:
+[2023-11-26T01:32:31.922+0000] {subprocess.py:93} INFO - [0m01:32:31  Running with dbt=1.7.2
+[2023-11-26T01:32:34.130+0000] {subprocess.py:93} INFO - [0m01:32:34  [[33mWARNING[0m]: Deprecated functionality
+[2023-11-26T01:32:34.131+0000] {subprocess.py:93} INFO - The `source-paths` config has been renamed to `model-paths`. Please update your
+[2023-11-26T01:32:34.132+0000] {subprocess.py:93} INFO - `dbt_project.yml` configuration to reflect this change.
+[2023-11-26T01:32:34.135+0000] {subprocess.py:93} INFO - [0m01:32:34  [[33mWARNING[0m]: Deprecated functionality
+[2023-11-26T01:32:34.136+0000] {subprocess.py:93} INFO - The `data-paths` config has been renamed to `seed-paths`. Please update your
+[2023-11-26T01:32:34.137+0000] {subprocess.py:93} INFO - `dbt_project.yml` configuration to reflect this change.
+[2023-11-26T01:32:35.062+0000] {subprocess.py:93} INFO - [0m01:32:35  Registered adapter: bigquery=1.7.2
+[2023-11-26T01:32:35.206+0000] {subprocess.py:93} INFO - [0m01:32:35  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2023-11-26T01:32:35.207+0000] {subprocess.py:93} INFO - There are 5 unused configuration paths:
+[2023-11-26T01:32:35.208+0000] {subprocess.py:93} INFO - - models.bigquery.core.raw
+[2023-11-26T01:32:35.209+0000] {subprocess.py:93} INFO - - models.bigquery
+[2023-11-26T01:32:35.210+0000] {subprocess.py:93} INFO - - models.bigquery.ephemeral
+[2023-11-26T01:32:35.211+0000] {subprocess.py:93} INFO - - models.bigquery.core.curated
+[2023-11-26T01:32:35.211+0000] {subprocess.py:93} INFO - - models.bigquery.core.semantic
+[2023-11-26T01:32:35.261+0000] {subprocess.py:93} INFO - [0m01:32:35  Found 1 model, 1 source, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[2023-11-26T01:32:35.268+0000] {subprocess.py:93} INFO - [0m01:32:35
+[2023-11-26T01:32:46.795+0000] {subprocess.py:93} INFO - [0m01:32:46  Concurrency: 4 threads (target='bq')
+[2023-11-26T01:32:46.797+0000] {subprocess.py:93} INFO - [0m01:32:46
+[2023-11-26T01:32:46.813+0000] {subprocess.py:93} INFO - [0m01:32:46  1 of 1 START sql incremental model SFCrimeData.tbl_curated_crime ............... [RUN]
+[2023-11-26T01:32:56.732+0000] {subprocess.py:93} INFO - [0m01:32:56  BigQuery adapter: https://console.cloud.google.com/bigquery?project=hakoona-matata-298704&j=bq:US:8ae3de68-a1cf-4201-b73f-3a2311ac9462&page=queryresults
+[2023-11-26T01:32:56.762+0000] {subprocess.py:93} INFO - [0m01:32:56  1 of 1 ERROR creating sql incremental model SFCrimeData.tbl_curated_crime ...... [[31mERROR[0m in 9.94s]
+[2023-11-26T01:32:56.781+0000] {subprocess.py:93} INFO - [0m01:32:56
+[2023-11-26T01:32:56.784+0000] {subprocess.py:93} INFO - [0m01:32:56  Finished running 1 incremental model in 0 hours 0 minutes and 21.51 seconds (21.51s).
+[2023-11-26T01:32:56.834+0000] {subprocess.py:93} INFO - [0m01:32:56
+[2023-11-26T01:32:56.836+0000] {subprocess.py:93} INFO - [0m01:32:56  [31mCompleted with 1 error and 0 warnings:[0m
+[2023-11-26T01:32:56.838+0000] {subprocess.py:93} INFO - [0m01:32:56
+[2023-11-26T01:32:56.841+0000] {subprocess.py:93} INFO - [0m01:32:56    Database Error in model tbl_curated_crime (models/bigquery/core/curated/tbl_curated_crime.sql)
+[2023-11-26T01:32:56.842+0000] {subprocess.py:93} INFO -   No matching signature for function PARSE_TIMESTAMP for argument types: STRING, TIMESTAMP. Supported signature: PARSE_TIMESTAMP(STRING, STRING, [STRING]) at [17:5]
+[2023-11-26T01:32:56.843+0000] {subprocess.py:93} INFO -   compiled Code at target/run/dbt_framework/models/bigquery/core/curated/tbl_curated_crime.sql
+[2023-11-26T01:32:56.843+0000] {subprocess.py:93} INFO - [0m01:32:56
+[2023-11-26T01:32:56.845+0000] {subprocess.py:93} INFO - [0m01:32:56  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2023-11-26T01:32:58.493+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-11-26T01:32:58.531+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-11-26T01:32:58.539+0000] {taskinstance.py:1368} INFO - Marking task as FAILED. dag_id=dag_SFCrimes_DimFact, task_id=tbl_curated_crime, execution_date=20231126T012445, start_date=20231126T013223, end_date=20231126T013258
+[2023-11-26T01:32:58.618+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 34 for task tbl_curated_crime (Bash command failed. The command returned a non-zero exit code 1.; 120002)
+[2023-11-26T01:32:58.650+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2023-11-26T01:32:58.717+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

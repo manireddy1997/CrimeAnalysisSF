@@ -1,0 +1,26 @@
+[2023-12-03T09:24:41.084+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_SFCrimes_data_bqload.load_to_bq_task manual__2023-12-03T09:21:28.581862+00:00 [queued]>
+[2023-12-03T09:24:41.115+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_SFCrimes_data_bqload.load_to_bq_task manual__2023-12-03T09:21:28.581862+00:00 [queued]>
+[2023-12-03T09:24:41.116+0000] {taskinstance.py:1331} INFO - Starting attempt 2 of 3
+[2023-12-03T09:24:41.189+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): load_to_bq_task> on 2023-12-03 09:21:28.581862+00:00
+[2023-12-03T09:24:41.200+0000] {standard_task_runner.py:57} INFO - Started process 589583 to run task
+[2023-12-03T09:24:41.206+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'dag_SFCrimes_data_bqload', 'load_to_bq_task', 'manual__2023-12-03T09:21:28.581862+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/dag_sf_crimes_bqload.py', '--cfg-path', '/tmp/tmpt3rv2c32']
+[2023-12-03T09:24:41.211+0000] {standard_task_runner.py:85} INFO - Job 88: Subtask load_to_bq_task
+[2023-12-03T09:24:41.363+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_SFCrimes_data_bqload.load_to_bq_task manual__2023-12-03T09:21:28.581862+00:00 [running]> on host jarvis
+[2023-12-03T09:24:41.947+0000] {taskinstance.py:1568} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_SFCrimes_data_bqload' AIRFLOW_CTX_TASK_ID='load_to_bq_task' AIRFLOW_CTX_EXECUTION_DATE='2023-12-03T09:21:28.581862+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-03T09:21:28.581862+00:00'
+[2023-12-03T09:24:49.648+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/mani-dev/airflow/dags/dag_sf_crimes_bqload.py", line 37, in load_bq_raw
+    job.result()
+  File "/home/mani-dev/.local/lib/python3.10/site-packages/google/cloud/bigquery/job/base.py", line 922, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/mani-dev/.local/lib/python3.10/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Error while reading data, error message: CSV table encountered too many errors, giving up. Rows: 0; errors: 100. Please look into the errors[] collection for more details.
+[2023-12-03T09:24:49.689+0000] {taskinstance.py:1368} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_SFCrimes_data_bqload, task_id=load_to_bq_task, execution_date=20231203T092128, start_date=20231203T092441, end_date=20231203T092449
+[2023-12-03T09:24:49.768+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 88 for task load_to_bq_task (400 Error while reading data, error message: CSV table encountered too many errors, giving up. Rows: 0; errors: 100. Please look into the errors[] collection for more details.; 589583)
+[2023-12-03T09:24:49.822+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2023-12-03T09:24:49.884+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

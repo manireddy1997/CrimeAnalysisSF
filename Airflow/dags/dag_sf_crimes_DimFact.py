@@ -36,11 +36,10 @@ project_dir = Variable.get("dbt_dir")
 tags_to_run = ["tbl_curated_crime"]
 # Define the dbt run tasks using BashOperator for each tag
 for tag in tags_to_run:
-    # run_dbt_command = f'dbt run --tag {tag} --project-dir {project_dir}'
-    run_dbt_command = f'dbt run --select "tag:{tag}" --profiles-dir {project_dir}/profiles --project-dir {project_dir}'
+    run_dbt_command = f'/home/mani-dev/.local/bin/dbt run --select "tag:{tag}" --profiles-dir {project_dir}/profiles --project-dir {project_dir}'
 
     run_dbt_task = BashOperator(
-        task_id=f'run_dbt_with_tag_{tag}',
+        task_id=f'{tag}',
         bash_command=run_dbt_command,
         dag=dag,
     )

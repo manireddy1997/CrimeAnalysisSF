@@ -2,7 +2,9 @@ from datetime import datetime, timedelta
 from airflow import DAG
 import airflow
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.models import Variable
+from utils.adminvars import delete_variable
 
 def load_bq_raw():
     from google.cloud import bigquery
@@ -13,15 +15,18 @@ def load_bq_raw():
     table_id = Variable.get("SFCrime_raw_table_id")
     credentials = service_account.Credentials.from_service_account_file(Variable.get("bq_ServiceAccount"))
     client = bigquery.Client(project=project_id, credentials=credentials)
-    source_file = Variable.get("SFcrimes_RawFiles")+'/SFcrimes_'+datetime.now().strftime("%Y%m%d%H")+'.csv'
+    tail = datetime.now().strftime("%Y%m%d")
+    source_file = Variable.get("SFcrimes_RawFiles")+'/SFcrimes_' + tail + '.csv'
 
     # Configure the job to automatically detect the schema
     job_config = bigquery.LoadJobConfig(
         source_format=bigquery.SourceFormat.CSV,
-        autodetect=True,
+        autodetect=False,
         field_delimiter=',',
         write_disposition='WRITE_TRUNCATE',
         create_disposition='CREATE_IF_NEEDED',
+        skip_leading_rows=1,
+        quote_character='"',
     )
 
     # Construct a reference to the dataset and table
@@ -60,6 +65,10 @@ load_to_bq_task = PythonOperator(
     dag=dag,
 )
 
+trigger_successor_task = TriggerDagRunOperator(
+    task_id="trigger_successor_task",
+    trigger_dag_id="dag_SFCrimes_DimFact",
+    dag=dag,
+)
 
-
-load_to_bq_task #>> trigger_successor_task
+load_to_bq_task >> trigger_successor_task

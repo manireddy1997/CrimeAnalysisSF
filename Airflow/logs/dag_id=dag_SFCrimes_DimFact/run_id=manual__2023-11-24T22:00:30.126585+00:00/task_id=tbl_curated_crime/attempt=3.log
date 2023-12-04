@@ -1,0 +1,24 @@
+[2023-11-24T22:09:52.289+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_SFCrimes_DimFact.tbl_curated_crime manual__2023-11-24T22:00:30.126585+00:00 [queued]>
+[2023-11-24T22:09:52.321+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_SFCrimes_DimFact.tbl_curated_crime manual__2023-11-24T22:00:30.126585+00:00 [queued]>
+[2023-11-24T22:09:52.322+0000] {taskinstance.py:1331} INFO - Starting attempt 3 of 3
+[2023-11-24T22:09:52.385+0000] {taskinstance.py:1350} INFO - Executing <Task(BashOperator): tbl_curated_crime> on 2023-11-24 22:00:30.126585+00:00
+[2023-11-24T22:09:52.395+0000] {standard_task_runner.py:57} INFO - Started process 67213 to run task
+[2023-11-24T22:09:52.401+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'dag_SFCrimes_DimFact', 'tbl_curated_crime', 'manual__2023-11-24T22:00:30.126585+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/dag_sf_crimes_DimFact.py', '--cfg-path', '/tmp/tmptcdzsgxj']
+[2023-11-24T22:09:52.405+0000] {standard_task_runner.py:85} INFO - Job 21: Subtask tbl_curated_crime
+[2023-11-24T22:09:52.553+0000] {task_command.py:410} INFO - Running <TaskInstance: dag_SFCrimes_DimFact.tbl_curated_crime manual__2023-11-24T22:00:30.126585+00:00 [running]> on host jarvis
+[2023-11-24T22:09:53.047+0000] {taskinstance.py:1568} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_SFCrimes_DimFact' AIRFLOW_CTX_TASK_ID='tbl_curated_crime' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T22:00:30.126585+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-24T22:00:30.126585+00:00'
+[2023-11-24T22:09:53.049+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-11-24T22:09:53.050+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --tag tbl_curated_crime --project-dir /home/mani-dev/airflow/dags/dbt/dataengineering/']
+[2023-11-24T22:09:53.070+0000] {subprocess.py:86} INFO - Output:
+[2023-11-24T22:09:53.072+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: dbt: command not found
+[2023-11-24T22:09:53.073+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2023-11-24T22:09:53.109+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2023-11-24T22:09:53.118+0000] {taskinstance.py:1368} INFO - Marking task as FAILED. dag_id=dag_SFCrimes_DimFact, task_id=tbl_curated_crime, execution_date=20231124T220030, start_date=20231124T220952, end_date=20231124T220953
+[2023-11-24T22:09:53.194+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 21 for task tbl_curated_crime (Bash command failed. The command returned a non-zero exit code 127.; 67213)
+[2023-11-24T22:09:53.219+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2023-11-24T22:09:53.274+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
